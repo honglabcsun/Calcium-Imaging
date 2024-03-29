@@ -7,7 +7,7 @@ function dff_heatmap
 %
 % created: 2024-02-23 by Marisa Mackie & Isaiah Martinez
 % adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-03-12
+% edited: 2024-03-28
 % ========================================================================
 
 % [STEP 1 - CALCULATE DFF AGGREGATE]======================================
@@ -57,13 +57,15 @@ end
 % [STEP 2 - GENERATE HEATMAP]=============================================
 
 % Initializes array for expanding "dff"
-dff_copy = zeros(num_logs,119);
+dff_copy = zeros(num_logs,119); % for 60s jnl
+%dff_copy = zeros(num_logs,1799); % for 180s jnl
 
 % This for loop iterates through each log file & stores the dff data in
 % new array "dff_copy"
 % i is the current log file's dff data
 for i = 1:num_logs
-    % j is the dff data at the current frame
+    % j is the dff data at the current frame 
+    % (1:119 for 60s jnl ; manually change to 1:1799 for 180s jnl)
     for j = 1:119
         % dff_copy holds dff values for all log files in one array
         dff_copy(i,j) = dff{1,i}(j);
@@ -79,8 +81,11 @@ h.YLabel = strcat('individuals n =', num2str(num_logs)); % y axis label + n
 h.GridVisible = 'off'; % removes gridlines so heatmap looks cohesive
 
 % Below generates manual tick labels for x-axis
-Xticks = 2:120;
+Xticks = 2:120; % for 60s jnl
+%Xticks = 2:1800; % for 180s jnl
 newXticks = string(Xticks);
+% only labels tick at every 10 frames (for 60s jnl)
+% manually change 10 to 100 (for 180s jnl)
 newXticks(mod(Xticks,10) ~= 0) = " ";
 h.XDisplayLabels = newXticks;
 

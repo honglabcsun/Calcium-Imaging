@@ -59,30 +59,33 @@ end
 % [STEP 2 - FILTER DFF VALUES ]============================================
 
 % Initializes array for expanding "dff"
-dff_copy = zeros(num_logs,119);
+dff_copy = zeros(num_logs,119); % for 60s jnl
+%dff_copy = zeros(num_logs,1799); % for 180s jnl
 
 % This for loop iterates through each log file & stores the dff data in
 % new array "dff_copy"
 % i is the current log file's dff data
 for i = 1:num_logs
     % j is the dff data at the current frame
+    % (1:119 for 60s jnl ; manually change to 1:1799 for 180s jnl)
     for j = 1:119
         % dff_copy holds dff values for all log files in one array
         dff_copy(i,j) = dff{1,i}(j);
     end
 end
 
-% df/f values for 10s after ON (10-20s; frames 20-40 ; col 19-39) 
+% df/f values for 10s after ON (10-20s; frames 20-40 ; col 19-38) 
 dff_ON10 = dff_copy(:,[19:38]);
-% df/f values for 10s after OFF (30-40s; frames 60-80; col 59-79)
+% df/f values for 10s after OFF (30-40s; frames 60-80; col 59-78)
 dff_OFF10 = dff_copy(:,[59:78]);
+%dff_OFF10 = dff_copy(:,[1299:1798]); % for 180s jnl (130s-180s; frames 1300-1800; col 1299-1798)
 
 % writes matrices as comma separated text files to use for plotting
 % For filename:
 % Manually specify salt_conc,  neuron, and indicate ON10 or OFF10
 % Do not put "." in the filename, matlab treats it as a file extension
-writematrix(dff_ON10,"rlh300_025M_NH4Cl_posR-ON10");
-writematrix(dff_OFF10,"rlh300_025M_NH4Cl_posR-OFF10");
+writematrix(dff_ON10,"csuEx72_bluelightbasal_60jnl_pos_ON10");
+writematrix(dff_OFF10,"csuEx72_bluelightbasal_60jnl_pos_OFF10");
 
 % ===================PLEASE READ BEFORE PLOTTING========================
 % Now you have dff_ON10 and OFF10 for this specific neuron & salt 
