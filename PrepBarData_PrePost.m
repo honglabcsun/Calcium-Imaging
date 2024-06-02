@@ -84,8 +84,8 @@ ON_10Pre = dff_copy(:,[1:20]);
 ON_10Post = dff_copy(:,[21:40]);
 % df/f values for 5s Pre-OFF (20s-30s = frames 42-61 = col 41-60)
 OFF_10Pre = dff_copy(:,[41:60]);
-% df/f values for 5s Post-OFF (30s-40s = frames 62-81 = col 60-81)
-OFF_10Post = dff_copy(:,[60:81]);
+% df/f values for 5s Post-OFF (30s-40s = frames 62-81 = col 61-80)
+OFF_10Post = dff_copy(:,[61:80]);
 
 % writes matrices as comma separated text files to use for plotting
 isHighConc = true; % creates Boolean defaulting isHighConc to true
