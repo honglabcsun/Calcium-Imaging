@@ -116,6 +116,18 @@ for j = 1:max_num_frames % Iterate through each frame
     % calculate confidence interval (upper & lower) for current frame
     CI_upper(j) = mean_dff(j) + moe(j);
     CI_lower(j) = mean_dff(j) - moe(j);
+
+    % % NOTE: If any data is truncated, use this section to calculate CI
+    % % and comment out the above section.
+    % % finds minimum frames (num of frames of smallest truncated data)
+    % min_num_frames = min(num_frames);
+    % % calculate t-score for current frame with given confidence level
+    % tscore(j) = tinv((1 + conf) / 2, min_num_frames - 1);
+    % % calculate margin of error (moe) for current frame
+    % moe(j) = tscore(j) * (std_dff(j)/sqrt(min_num_frames - 1));
+    % % calculate confidence interval (upper & lower) for current frame
+    % CI_upper(j) = mean_dff(j) + moe(j);
+    % CI_lower(j) = mean_dff(j) - moe(j);
   
 end
 
@@ -123,7 +135,7 @@ end
 logfile = log_list{max_num_frames_ind};
 data = load(logfile); 
 x_max = data(:,2)/1000; % ms/1000
-plot(x_max, mean_dff,'k-','LineWidth',2) % k = black, b = blue, r = red
+plot(x_max, mean_dff,'r-','LineWidth',2) % k = black, b = blue, r = red
 
 % ==[ CI Ribbon ]=====
 % set CI bounds
@@ -132,13 +144,13 @@ xconf = [x_tp, x_tp(end:-1:1)];
 yconf = [CI_upper, CI_lower(end:-1:1)];
 
 % fill ribbon between conf bounds in gray
-ribbon = fill(xconf, yconf, [0.5, 0.5, 0.5]); % [0.5, 0.5, 0.5] = gray
+ribbon = fill(xconf, yconf, 'r'); % [0.5, 0.5, 0.5] = gray
 
 % makes ribbon transparent & have no edge line
 set(ribbon, 'FaceAlpha', 0.3, 'EdgeColor', 'none');
 
 % ==[ Save aggregate plot ]================================================
-plotname = 'aggregate_plot_ribbonCI.png';
+plotname = 'aggregate_plot_ribbonCI_r.png';
 saveas(gcf,plotname) % Save plot
 end
 

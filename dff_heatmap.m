@@ -66,7 +66,9 @@ dff_copy = zeros(num_logs,119); % for 60s jnl
 for i = 1:num_logs
     % j is the dff data at the current frame 
     % (1:119 for 60s jnl ; manually change to 1:1799 for 180s jnl)
-    for j = 1:119
+    % NOTE: truncated data will throw an error. Change 119 to number of
+    % frames (rows) in shortest truncated logfile
+    for j = 1:60
         % dff_copy holds dff values for all log files in one array
         dff_copy(i,j) = dff{1,i}(j);
     end
