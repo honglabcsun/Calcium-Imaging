@@ -4,7 +4,7 @@ by Marisa Mackie
 
 Contributors: Kathleen Quach, Isaiah Martinez, Marisa Mackie
 
-Written with MATLAB versions 2021a - 2023b
+Written with MATLAB versions 2021a - 2024b
 
 
 **IMPORTANT:** Before using any script in this repo, you must have your calcium imaging data files arranged in the proper format.
