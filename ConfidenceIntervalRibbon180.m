@@ -1,4 +1,4 @@
-function ConfidenceIntervalRibbon
+function ConfidenceIntervalRibbon180
 % ========================================================================
 % Purpose of this script is to take existing Calcium imaging dF/F data and
 % plot a single average line, with a shaded ribbon around the line to
@@ -31,8 +31,7 @@ num_frames = NaN(1,num_logs); % Number of frames in each log file
 % Initialize aggregate plot
 figure;
 hold on % Keeps all elements on figure
-xlim([0,60]) % x axis limits (for 60s jnl)
-% xlim([0,180]) % x axis limits (for 180s jnl)
+xlim([0,180]) % x axis limits (for 180s jnl)
 ylim([-100,100]) % y axis limits
 xlabel('Time (seconds)','FontSize',14); 
 ylegend = 'dF/F (%)';
@@ -41,8 +40,7 @@ ylabel(ylegend, 'FontSize',14);
 % Manually change time in seconds (e.g. xline(seconds,'r');
 % comment out vertical lines for light controls & special JNLs
 xline(10,'r'); % r = red, c = cyan
-xline(30,'r'); % (for 60s jnl)
-% xline(130, 'r'); % (for 180s jnl)
+xline(130, 'r'); % (for 180s jnl)
 
 % For dealing with confidence intervals later:
 % Flag - if dealing with truncated data or not
