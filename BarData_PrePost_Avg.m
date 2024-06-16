@@ -11,7 +11,7 @@ function BarData_PrePost_Avg
 %
 % created: 2024-06-01 by Marisa Mackie & Isaiah Martinez
 % Parts adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-06-01
+% edited: 2024-06-02
 % ========================================================================
 %% PREPS DATA FOR AVERAGING - DECIDE IF MEASURING ON OR OFF
 

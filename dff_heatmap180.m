@@ -1,13 +1,14 @@
-function dff_heatmap
+function dff_heatmap180
 % ========================================================================
 % Purpose of this script is to take existing Calcium imaging dF/F data and
 % generate a heatmap demonstrating the positive or negative % change in
 % dF/F (colors) for each individual worm (each row). The heatmap will be
 % generated per condition (i.e. stimulus-strain combination)
+% for 180jnl
 %
-% created: 2024-02-23 by Marisa Mackie & Isaiah Martinez
+% created: 2024-06-08 by Marisa Mackie & Isaiah Martinez
 % adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-03-28
+% edited: 2024-06-08
 % ========================================================================
 
 % [STEP 1 - CALCULATE DFF AGGREGATE]======================================
@@ -57,18 +58,16 @@ end
 % [STEP 2 - GENERATE HEATMAP]=============================================
 
 % Initializes array for expanding "dff"
-dff_copy = zeros(num_logs,119); % for 60s jnl
-%dff_copy = zeros(num_logs,1799); % for 180s jnl
+dff_copy = zeros(num_logs,1799); % for 180s jnl
 
 % This for loop iterates through each log file & stores the dff data in
 % new array "dff_copy"
 % i is the current log file's dff data
 for i = 1:num_logs
     % j is the dff data at the current frame 
-    % (1:119 for 60s jnl ; manually change to 1:1799 for 180s jnl)
-    % NOTE: truncated data will throw an error. Change 119 to number of
+    % NOTE: truncated data will throw an error. Change 1799 to number of
     % frames (rows) in shortest truncated logfile
-    for j = 1:119
+    for j = 1:1799
         % dff_copy holds dff values for all log files in one array
         dff_copy(i,j) = dff{1,i}(j);
     end
@@ -83,12 +82,10 @@ h.YLabel = strcat('individuals n =', num2str(num_logs)); % y axis label + n
 h.GridVisible = 'off'; % removes gridlines so heatmap looks cohesive
 
 % Below generates manual tick labels for x-axis
-Xticks = 2:120; % for 60s jnl
-%Xticks = 2:1800; % for 180s jnl
+Xticks = 2:1800; % for 180s jnl
 newXticks = string(Xticks);
-% only labels tick at every 10 frames (for 60s jnl)
-% manually change 10 to 100 (for 180s jnl)
-newXticks(mod(Xticks,10) ~= 0) = " ";
+% only labels tick at every 100 frames (for 180s jnl)
+newXticks(mod(Xticks,100) ~= 0) = " ";
 h.XDisplayLabels = newXticks;
 
 % saves heatmap as .png

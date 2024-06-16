@@ -104,7 +104,6 @@ else
     writematrix(OFF_10Post,"OFF_10Post-L");
 end
 
-end % ends function
 
 %% READ ME BEFORE NEXT STEP
 % ===================PLEASE READ BEFORE PROCEEDING========================
