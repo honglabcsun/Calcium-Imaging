@@ -31,15 +31,15 @@ isHighConc = input(prompt); % stores user's answer: true = 1, false = 0
 % read generated from PrepBarData scripts
 % Will read ON & OFF files
     if isHighConc % reads H files
-     Post7ON = readmatrix("ON_10Post-H-AM7.txt"); % AM7 H, ON Post
-     Post12ON = readmatrix("ON_10Post-H-AM12.txt"); % AM12 H, ON Post
-     Post7OFF = readmatrix("OFF_10Post-H-AM7.txt"); % AM7 H, OFF Post
-     Post12OFF = readmatrix("OFF_10Post-H-AM12.txt"); % AM12 H, OFF Post
+     Post7ON = readmatrix("ON_10s-H-AM7.txt"); % AM7 H, ON Post
+     Post12ON = readmatrix("ON_10s-H-AM12.txt"); % AM12 H, ON Post
+     Post7OFF = readmatrix("OFF_10s-H-AM7.txt"); % AM7 H, OFF Post
+     Post12OFF = readmatrix("OFF_10s-H-AM12.txt"); % AM12 H, OFF Post
     else % reads L files
-     Post7ON = readmatrix("ON_10Post-L-AM7.txt"); % AM7 L, ON Post
-     Post12ON = readmatrix("ON_10Post-L-AM12.txt"); % AM12 L, ON Post
-     Post7OFF = readmatrix("OFF_10Post-L-AM7.txt"); % AM7 L, OFF Post
-     Post12OFF = readmatrix("OFF_10Post-L-AM12.txt"); % AM12 L, OFF Post
+     Post7ON = readmatrix("ON_10s-L-AM7.txt"); % AM7 L, ON Post
+     Post12ON = readmatrix("ON_10s-L-AM12.txt"); % AM12 L, ON Post
+     Post7OFF = readmatrix("OFF_10s-L-AM7.txt"); % AM7 L, OFF Post
+     Post12OFF = readmatrix("OFF_10s-L-AM12.txt"); % AM12 L, OFF Post
     end
 
 %% AVERAGES DFF VALUES ACROSS 10s WINDOW PER SAMPLE

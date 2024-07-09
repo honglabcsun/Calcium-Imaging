@@ -6,7 +6,7 @@ function ConfidenceIntervalRibbon
 %
 % created: 2024-02-13 by Marisa Mackie
 % adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-06-08
+% edited: 2024-07-06
 % ========================================================================
 
 % [STEP 1 - CALCULATE DFF AGGREGATE]======================================
@@ -43,6 +43,7 @@ ylabel(ylegend, 'FontSize',14);
 xline(10,'r'); % r = red, c = cyan
 xline(30,'r'); % (for 60s jnl)
 % xline(130, 'r'); % (for 180s jnl)
+hold on;
 
 % For dealing with confidence intervals later:
 % Flag - if dealing with truncated data or not
@@ -152,6 +153,7 @@ if isRed
     data = load(logfile); 
     x_max = data(:,2)/1000; % ms/1000
     plot(x_max, mean_dff,'r-','LineWidth',2) % k = black, b = blue, r = red
+    hold on;
     % ==[ CI Ribbon ]=====
     % set CI bounds
     x_tp = transpose(x_max); % transpose x so vectors are same length
@@ -169,14 +171,14 @@ else
     logfile = log_list{max_num_frames_ind};
     data = load(logfile); 
     x_max = data(:,2)/1000; % ms/1000
-    plot(x_max, mean_dff,'k-','LineWidth',2) % k = black
+    plot(x_max, mean_dff,'r-','LineWidth',2) % k = black
     % ==[ CI Ribbon ]=====
     % set CI bounds
     x_tp = transpose(x_max); % transpose x so vectors are same length
     xconf = [x_tp, x_tp(end:-1:1)];
     yconf = [CI_upper, CI_lower(end:-1:1)];
     % fill ribbon between conf bounds in gray
-    ribbon = fill(xconf, yconf, [0.5, 0.5, 0.5]); % [0.5, 0.5, 0.5] = gray
+    ribbon = fill(xconf, yconf, 'r'); % [0.5, 0.5, 0.5] = gray
     % makes ribbon transparent & have no edge line
     set(ribbon, 'FaceAlpha', 0.3, 'EdgeColor', 'none');
     % ==[ Save aggregate plot ]================================================

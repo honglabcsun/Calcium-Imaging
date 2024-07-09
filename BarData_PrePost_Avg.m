@@ -25,7 +25,7 @@ function BarData_PrePost_Avg
 
 isON = true; % creates Boolean defaulting isON to true
 % prompts user to specify if plotting for ON (true) or OFF (false)
-prompt = "Are you plotting dots for stimulus ON? \n Answer 'true' or 'false': ";
+prompt = "\n Are you plotting dots for stimulus ON? \n Answer 'true' or 'false': ";
 isON = input(prompt); % stores user's answer: true = 1, false = 0
 
 % Based on value of isON (true or false), determines which txt files to
