@@ -9,7 +9,7 @@ function Bar_PrePost_AM7vAM12
 
 % created: 2024-06-02 by Marisa Mackie & Isaiah Martinez
 % Parts adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-06-02
+% edited: 2024-07-17
 % ========================================================================
 %% PREPS DATA FOR AVERAGING - DECIDE IF MEASURING ON OR OFF
 
@@ -66,11 +66,10 @@ end
 
 % avg dff values across 10s window for each animal (n=10)
 % generates n values (points)
-% also transposes col -> rows
-ind_avgsPre7 = transpose(mean(Pre7, 2));
-ind_avgsPost7 = transpose(mean(Post7, 2));
-ind_avgsPre12 = transpose(mean(Pre12, 2));
-ind_avgsPost12 = transpose(mean(Post12, 2));
+ind_avgsPre7 = mean(Pre7, 2);
+ind_avgsPost7 = mean(Post7, 2);
+ind_avgsPre12 = mean(Pre12, 2);
+ind_avgsPost12 = mean(Post12, 2);
 
 %% SAVES AVERAGES AS TEXT FILE
 % export data files for plotting & statistical analysis in Prism

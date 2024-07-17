@@ -1,15 +1,18 @@
-function BarData_PrePost_Avg
+function BarData_PrePost_Ratios
 %% [Introduction]=========================================================
 % Purpose of this script is to take existing Calcium imaging dF/F data and
 % prepare it for plotting a bar plot.
+%
 % It will take the txt files you generated previously (from
-% "PrepBarData_PrePost.m" script) and calculate averages. These averages
-% will be exported as .txt files that you for plotting in Prism GraphPad 
-% software.
+% "PrepBarData_PrePost.m" script) and calculate a Post/Pre ratio at each
+% time point across the 10s window Before (pre) and After (post) the
+% stimulus (ON or OFF, user choice).
+% After calculating the ratios, they will be averaged. These values will be
+% exported as .txt files that you for plotting in Prism GraphPad software.
 % 
 % Important: This script should be run AFTER "PrepBarData_PrePost.m"
 %
-% created: 2024-06-01 by Marisa Mackie & Isaiah Martinez
+% created: 2024-07-16 by Marisa Mackie & Isaiah Martinez
 % Parts adapted from script created by Kathleen Quach 2023-10-03
 % edited: 2024-07-16
 % ========================================================================
@@ -41,36 +44,34 @@ else % reads files for OFF
     L1 = readmatrix("OFF_10Pre-L.txt"); % lower conc, OFF Pre
     L2 = readmatrix("OFF_10Post-L.txt"); % lower conc, OFF Post
 end
+%% CALCULATE POST/PRE RATIO
 
-%% AVERAGES DFF VALUES ACROSS 10s WINDOW PER SAMPLE
+% Divides element-wise H2/H1 (Post/Pre for High conc) as a percent
+Hratios = (H2./H1)*100;
+% Divides element-wise L2/L1 (Post/Pre for Low conc) as a percent
+Lratios = (L2./L1)*100;
+%% AVERAGES POST/PRE RATIOS ACROSS 10s WINDOW PER SAMPLE
 
 % avg dff values across 10s window for each animal (n=10)
 % generates n values (points)
-% Note: I verified manually that this averages the way it is supposed to
-ind_avgsH1 = mean(H1, 2);
-ind_avgsH2 = mean(H2, 2);
-ind_avgsL1 = mean(L1, 2);
-ind_avgsL2 = mean(L2, 2);
+avg_Hratios = mean(Hratios, 2);
+avg_Lratios = mean(Lratios, 2);
 
-%% SAVES AVERAGES AS TEXT FILE
+%% SAVES AVERAGES RATIOS AS TEXT FILE
 % export data files for plotting & statistical analysis in Prism
 if isON % for analyzing ON
-    writematrix(ind_avgsH1,"DotsYData_H1-ON");
-    writematrix(ind_avgsH2,"DotsYData_H2-ON");
-    writematrix(ind_avgsL1,"DotsYData_L1-ON");
-    writematrix(ind_avgsL2,"DotsYData_L2-ON");
+    writematrix(avg_Hratios,"BarRatios-H-ON");
+    writematrix(avg_Lratios,"BarRatios-L-ON");
 else % for analyzing OFF
-    writematrix(ind_avgsH1,"DotsYData_H1-OFF");
-    writematrix(ind_avgsH2,"DotsYData_H2-OFF");
-    writematrix(ind_avgsL1,"DotsYData_L1-OFF");
-    writematrix(ind_avgsL2,"DotsYData_L2-OFF");
+    writematrix(avg_Hratios,"BarRatios-H-OFF");
+    writematrix(avg_Lratios,"BarRatios-L-OFF");
 end
-
 %% READ ME BEFORE NEXT STEP
 % ===================PLEASE READ BEFORE PROCEEDING========================
 % Now you have the Averages text files for comparing the differences
-% in Pre & Post 10s windows for High & Low concentrations of a salt for a 
-% single neuron.
+% between Post/Pre ratios for High & Low concentrations of a salt for a 
+% single neuron. Can also be used for later comparisons of WT Post/Pre vs
+% mutant Post/Pre.
 
 % You can take these Average txt files (labeled with "DotsYData") and
 % import into Prism GraphPad software for plotting.

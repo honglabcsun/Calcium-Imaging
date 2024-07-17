@@ -29,11 +29,10 @@ L2 = readmatrix("OFF_10s-L"); % lower conc, OFF
 %% AVERAGES DFF VALUES ACROSS 10s WINDOW PER SAMPLE
 % avg dff values of all frames (averages the 10s) for each animal (n=10)
 % generates n values (points)
-% also transposes col -> rows
-ind_avgsH1 = transpose(mean(H1, 2));
-ind_avgsH2 = transpose(mean(H2, 2));
-ind_avgsL1 = transpose(mean(L1, 2));
-ind_avgsL2 = transpose(mean(L2, 2));
+ind_avgsH1 = mean(H1, 2);
+ind_avgsH2 = mean(H2, 2);
+ind_avgsL1 = mean(L1, 2);
+ind_avgsL2 = mean(L2, 2);
 
 %% SAVES AVERAGES AS TEXT FILE
 % export data files for plotting & statistical analysis in Prism

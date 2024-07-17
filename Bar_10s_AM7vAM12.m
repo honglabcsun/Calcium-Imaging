@@ -9,7 +9,7 @@ function Bar_10s_AM7vAM12
 
 % created: 2024-06-02 by Marisa Mackie & Isaiah Martinez
 % Parts adapted from script created by Kathleen Quach 2023-10-03
-% edited: 2024-06-02
+% edited: 2024-07-17
 % ========================================================================
 %% PREPS DATA FOR AVERAGING - DECIDE IF MEASURING ON OR OFF
 
@@ -46,12 +46,11 @@ isHighConc = input(prompt); % stores user's answer: true = 1, false = 0
 
 % avg dff values across 10s window for each animal (n=10)
 % generates n values (points)
-% also transposes col -> rows
 
-ind_avgs7ON = transpose(mean(Post7ON, 2));
-ind_avgs7OFF = transpose(mean(Post7OFF, 2));
-ind_avgs12ON = transpose(mean(Post12ON, 2));
-ind_avgs12OFF = transpose(mean(Post12OFF, 2));
+ind_avgs7ON = mean(Post7ON, 2);
+ind_avgs7OFF = mean(Post7OFF, 2);
+ind_avgs12ON = mean(Post12ON, 2);
+ind_avgs12OFF = mean(Post12OFF, 2);
 
 %% SAVES AVERAGES AS TEXT FILE
 % export data files for plotting & statistical analysis in Prism
