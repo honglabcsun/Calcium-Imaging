@@ -1,15 +1,15 @@
-function BarData_10sAfter_Avg
+function BarData_10sAfter_Max
 % ========================================================================
 % Purpose of this script is to take existing Calcium imaging dF/F data and
 % prepare it for plotting a bar plot.
 % It will take the txt files you generated previously (from
-% "PrepBarData_10s.m" script) and calculate averages. These averages
-% will be exported as .txt files for plotting in Prism GraphPad 
+% "PrepBarData_10s.m" script) and calculate max values. 
+% These will be exported as .txt files for plotting in Prism GraphPad 
 % software.
 % 
 % Important: This script should be run AFTER "PrepBarData_10sAfter.m"
 %
-% created: 2024-03-03 by Marisa Mackie & Isaiah Martinez
+% created: 2024-07-23 by Marisa Mackie & Isaiah Martinez
 % edited: 2024-07-23
 % ========================================================================
 %% READS FILES
@@ -26,27 +26,19 @@ H2 = readmatrix("OFF_10s-H"); % higher conc, OFF
 L1 = readmatrix("ON_10s-L"); % lower conc, ON
 L2 = readmatrix("OFF_10s-L"); % lower conc, OFF
 
-%% AVERAGES DFF VALUES ACROSS 10s WINDOW PER SAMPLE
-% avg dff values of all frames (averages the 10s) for each animal (n=10)
-% generates n values (points)
-ind_avgsH1 = mean(H1, 2);
-ind_avgsH2 = mean(H2, 2);
-ind_avgsL1 = mean(L1, 2);
-ind_avgsL2 = mean(L2, 2);
+%% CALCULATE MAXIMUM VALUES 10s AFTER ON & OFF
+
+% Calculates Max value across 10s window after ON for each conc
+maxH1 = max(H1,[],2);
+maxL1 = max(L1,[],2);
+% Calculates Max value across 10s window after OFF for each conc
+maxH2 = max(H2,[],2);
+maxL2 = max(L2,[],2);
 
 %% SAVES AVERAGES AS TEXT FILE
 % export data files for plotting & statistical analysis in Prism
-    writematrix(ind_avgsH1,"BarY_ON_10s-H1");
-    writematrix(ind_avgsH2,"BarY_OFF_10s-H2");
-    writematrix(ind_avgsL1,"BarY_ON_10s-L1");
-    writematrix(ind_avgsL2,"BarY_OFF_10s-L2");
+    writematrix(maxH1,"BarMax_ON_10s-H1");
+    writematrix(maxH2,"BarMax_OFF_10s-H2");
+    writematrix(maxL1,"BarMax_ON_10s-L1");
+    writematrix(maxL2,"BarMax_OFF_10s-L2");
 end
-
-%% READ ME BEFORE NEXT STEP
-% ===================PLEASE READ BEFORE PROCEEDING========================
-% Now you have the Averages text files for comparing the ON vs OFF
-% differences in 10s windows for High & Low concentrations of a salt for a 
-% single neuron.
-
-% You can take these Average txt files (labeled with "BarY") and
-% import into Prism GraphPad software for plotting.
