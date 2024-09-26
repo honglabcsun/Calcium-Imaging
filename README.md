@@ -7,9 +7,10 @@ Contributors: Kathleen Quach, Isaiah Martinez, Marisa Mackie
 Written with MATLAB versions 2021a - 2024b
 
 
-**IMPORTANT:** Before using any script in this repo, you must have your calcium imaging data files arranged in the proper format.
+**IMPORTANT:** Before using any script in this repository, you must have your calcium imaging data files arranged in the proper format.
 
-[insert format here]
+Folder with WormStrainName_StimulusType >
+     Folder with
 
 
 Below is a description of the purpose of each script in this repository and what it does. This information is also included in the each of the scripts themselves.
@@ -23,9 +24,9 @@ Below is a description of the purpose of each script in this repository and what
   ### dff_heatmap
   Generates 
 
-  ### dff_prep4dots
+  ### here
   Generates 
 
-  ### dff_dots
+  ### here
   Generates 
 
