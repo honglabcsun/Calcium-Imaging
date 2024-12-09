@@ -20,13 +20,18 @@ Below is a description of the purpose of each script in this repository and what
 
   ### ConfidenceIntervalRibbon
   Generates a plot of mean % dF/F (average percent change in fluorescence intensity) over time. This plot contains only the average trace, which includes shaded ribbons as 95% CI.
+  There also exists "ConfidenceIntervalRibbon180" exclusively for data collected using the 180s JNL program (10off_120on_50off)
 
   ### dff_heatmap
   Generates a normalizedheatmap of % dF/F (average percent change in fluorescence intensity) over time, where each row indicates responses from a single individual.
+  There also exists "df_heatmap180" exclusively for data collected using the 180s JNL program (10off_120on_50off)
 
-  ### here
-  Generates 
+  ### PrepBarData scripts
+  Organizes data to be used in BarData scripts. Note: You must manually move log files that you wish to compare into the same directory.
+  There exists "PrepBarData_10sAfter" to be used for comparisons of responses 10s post-stimulus of the ON stimulus vs 10s post-stimulus of the OFF stimulus.
+  There exists "PrepBarData_PrePost" to be used for comparisons of responses 10s PRE-stimulus vs 10s POST-stimulus. (Pick one stimulus: ON or OFF stimulus).
 
-  ### here
-  Generates 
+  ### BarData scripts
+  Preps data to be copied into Excel and/or GraphPad Prism.
+  There exists "
 
