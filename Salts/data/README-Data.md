@@ -16,20 +16,69 @@ The first 3 directories refer to the **strain name** of the *Pristionchus pacifi
 * rlh300 = *
 
 The last directory, "xReAnalyzed_OldData" leads to several other directories containing "old" data from prior experiments conducted for my [Master's thesis](http://hdl.handle.net/20.500.12680/b5645184z). Within this directory are two more directories called "che-1_RCaMP" and "odr-7_GCaMP", which refer to the 2 **calcium sensors** I used (RCaMP & GCaMP) and the gene promoters they're hooked up to (*che-1* & *odr-7*).
+The strains you will find associated with this folder are:
+* csuEx72 = *
+* csuEx89 = *
 
-#### 2.1 - Strains + 
-Upon opening these directories, you will notice several folders containing names separated by underscores. The naming system is as follows:
+#### 2.2 - File Naming Convention
+Upon opening these directories, you will notice several folders containing names separated by underscores. The naming system is (mostly) as follows:
 **strain name** _ **salt** _ **concentration** _ **exposure time**
 (e.g., csuEx93_NaCl_25mM)
 (e.g., csuEx98_NaCl_25mM_100ms)
 
 *Note: 
-Salts you might see are: NaCl, NH4Cl, NH4I, NH4Br
+Salts you might see are: NaCl, NH4Cl, NH4I, NH4Br, NaAc
 Concentrations you might see are: 25mM, 250mM, 2.5M, 750mM
 Exposure times you might see are: 100ms, 500ms*
 
 
-However, in the directories that follow "xReAnalyzed_OldData", there are some inconsistencies. I will define some here:
+However, in the directories that follow "xReAnalyzed_OldData", there are some inconsistencies. I will define them below:
+
+1. Instead of salts, sometimes you might see other stimuli & concentrations in the filename.
+  * "greenlightbasal" and "bluelightbasal" refer to
+  
+  * "1oct_10percent"
+  * "Bcary_5percent"
+  * "Myristate_1percent"
+
+2. Journal Names. "Journals" or "jnl" refer to the programmed timing condition for turning "ON" and "OFF" the stimulus during imaging.
+  * "60jnl" - refers to a jnl that lasted a total of 60s (1 min). I used this program the most. If the "jnl" is not listed in the filename, I most likely used the 60s jnl (treat it as the default). This jnl consisted of 10s OFF, 20s ON, 30s OFF condition for switching the stimulus ON/OFF. Sometimes this will be referred to as "JNL_10off_20on_20off"
+  * "180jnl" - refers to a jnl that lasted a total of 180s (3 min). This jnl consisted of 10s OFF, 120s ON, 50s OFF condition for switching the stimulus ON/OFF. Sometimes this will be referred to as "JNL_10off_120on_50off"
+
+#### 2.3 - Neuron Imaged
+
+Upon entering the directories with strain name + salt + concentration + exposure time (and all other variations), you may notice even more directories. These refer to which neuron pair was imaged. I will define them in detail below:
+
+For all che-1 RCaMP strains:
+* "ant" refers to the anterior neuron, in this case, the AM12
+* "pos" refers to the posterior neuron, in this case, the AM7
+* "AM12" refers to
+* "AM7" refers to
+
+For all odr-7 GCaMP strains:
+* "ant" refers to the anterior neuron, in this case, 
+* "pos" refers to the posterior neuron, in this case, 
+* "both" refers to BOTH neurons being imaged within the same tracking. This means the single track captures BOTH the anterior and posterior neuron.
+
+#### 2.4 - Neuron Imaged - L/R
+
+Upon entering those directories, you may notice additional directories. These refer to whether the specific neuron imaged within the pair, i.e., whether it was the Left or Right neuron.
+Whereever you see "L" refers to the Left Neuron
+Wherever you see "R" refers to the Right Neuron
+For example:
+
+* "antL" refers to
+* "posL" refers to
+
+* "antR" refers to
+* "posR" refers to
+
+* "antLR" refers to
+* "posLR" refers to
+
+* "AM12L" refers to
+* "AM12R" refers to
+  
 
 
 
