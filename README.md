@@ -7,6 +7,9 @@ Contributors: Kathleen Quach, Isaiah Martinez
 
 Written with MATLAB versions 2021a - 2024b
 
+Used in the following publications:
+* Mackie Marisa, Le Vivian Vy, Carstensen Heather R, Kushnir Nicole R, Castro Dylan L, Dimov Ivan M, Quach Kathleen T, Cook Steven J, Hobert Oliver, Chalasani Sreekanth H, Hong Ray L (2025) Evolution of lateralized gustation in nematodes eLife 14:RP103796 https://doi.org/10.7554/eLife.103796.2
+
 ***
 ### Important Notes
 Before using any script in this repository, please see the readme file within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [Readme-Data](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md)
