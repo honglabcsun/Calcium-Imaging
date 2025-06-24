@@ -1,19 +1,16 @@
 # Calcium-Imaging
 ## Hong Lab MATLAB scripts for analyzing Calcium Imaging data in _Pristionchus pacificus_.
-by Marisa Mackie
+by Marisa Mackie, for Ray Hong Lab at California State University, Northridge (CSUN)
 
 Contributors: Kathleen Quach, Isaiah Martinez, Marisa Mackie
 
 Written with MATLAB versions 2021a - 2024b
 
 
-**IMPORTANT:** Before using any script in this repository, you must have your calcium imaging data files arranged in the proper format.
-
-Folder with WormStrainName_StimulusType >
-     Folder with
+**Note:** Before using any script in this repository, please see the readme file in within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md](Readme-Data)
 
 
-Below is a description of the purpose of each script in this repository and what it does. This information is also included in the each of the scripts themselves.
+Below is a description of each script in this repository and what it does. This information is also included in the each of the scripts themselves.
 
   ### calculate_dff_aggregate
   Generates a single plot of mean % dF/F (average percent change in fluorescence intensity) over time. This plot contains traces from individual worm samples, as well as one thick black line showing the average across all worms tested.
