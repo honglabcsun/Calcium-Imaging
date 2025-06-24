@@ -7,7 +7,7 @@ Contributors: Kathleen Quach, Isaiah Martinez, Marisa Mackie
 Written with MATLAB versions 2021a - 2024b
 
 
-**Note:** Before using any script in this repository, please see the readme file in within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md](Readme-Data)
+**Note:** Before using any script in this repository, please see the readme file in within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [Readme-Data](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md)
 
 
 Below is a description of each script in this repository and what it does. This information is also included in the each of the scripts themselves.
