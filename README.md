@@ -1,12 +1,15 @@
 # Calcium-Imaging
 Hong Lab MATLAB scripts for analyzing Calcium Imaging data in _Pristionchus pacificus_.
-by Marisa Mackie, for Ray Hong Lab at California State University, Northridge (CSUN)
+
+By Marisa Mackie, for Ray Hong Lab at California State University, Northridge (CSUN)
+
 Contributors: Kathleen Quach, Isaiah Martinez
+
 Written with MATLAB versions 2021a - 2024b
 
 ***
 ### Important Notes
-Before using any script in this repository, please see the readme file in within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [Readme-Data](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md)
+Before using any script in this repository, please see the readme file within the data folder of this repo to organize your data in the way that is required for proper functioning of these scripts. See [Readme-Data](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md)
 
 ***
 ### Scripts
