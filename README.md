@@ -14,7 +14,7 @@ Used in the following publications:
 ### Important Notes
 Before using any script in this repository, particularly for salts, please do the following:
 1. See [Readme-Data](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/data/README-Data.md) to understand how to organize the data for use with these scripts. There is quite a bit of manually movement of files into folders required for some scripts to work properly.
-2. See []() and follow the instructions to use the scripts properly. They need to be run in a specific order and I don't currently have a "main" script to run them all, especially because---as previously mentioned---some scripts require manually moving files from one folder to another between the running of different scripts.
+2. See [HOW-TO-USE-SCRIPTS.md](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/scripts/HOW-TO-USE-SCRIPTS.md) and follow the instructions to use the scripts properly. They need to be run in a specific order and I don't currently have a "main" script to run them all, especially because---as previously mentioned---some scripts require manually moving files from one folder to another between the running of different scripts.
 
 
 
