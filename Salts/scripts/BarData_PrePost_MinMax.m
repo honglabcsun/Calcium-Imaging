@@ -4,11 +4,10 @@ function BarData_PrePost_MinMax
 % prepare it for plotting a bar plot.
 %
 % It will take the txt files you generated previously (from
-% "PrepBarData_PrePost.m" script) and calculate a Post/Pre ratio at each
-% time point across the 10s window Before (pre) and After (post) the
-% stimulus (ON or OFF, user choice).
+% "PrepBarData_PrePost.m" script) and calculate the minimum value across the 10s window Before (pre) stimulus 
+% and the maximum value across the 10s window After (post) stimulus for the stimulus (ON or OFF, user choice).
 % After calculating the ratios, they will be averaged. These values will be
-% exported as .txt files that you for plotting in Prism GraphPad software.
+% exported as .txt files for plotting in Prism GraphPad software.
 % 
 % Important: This script should be run AFTER "PrepBarData_PrePost.m"
 %
