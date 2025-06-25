@@ -15,7 +15,7 @@ Below is a description of each script in this repository and what it does. This 
 
 #### For heatmaps:
 
-* [**dff_heatmap**] - Generates a normalized heatmap of % dF/F (average percent change in fluorescence intensity) over time, where each row indicates responses from a single individual. The values are normalized from 0 (most negative values, dark color) to 1 (most positive values, light color). The default is for data collected with the 60s JNL program (10off_20on_30off). There is also ["dff_heatmap180"](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/scripts/dff_heatmap180) exclusively for data collected using the 180s JNL program (10off_120on_50off).
+* [**dff_heatmap**](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/scripts/dff_heatmap.m) - Generates a normalized heatmap of % dF/F (average percent change in fluorescence intensity) over time, where each row indicates responses from a single individual. The values are normalized from 0 (most negative values, dark color) to 1 (most positive values, light color). The default is for data collected with the 60s JNL program (10off_20on_30off). There is also ["dff_heatmap180"](https://github.com/honglabcsun/Calcium-Imaging/blob/main/Salts/scripts/dff_heatmap180.m) exclusively for data collected using the 180s JNL program (10off_120on_50off).
 
 #### For Bar Plots:
 
