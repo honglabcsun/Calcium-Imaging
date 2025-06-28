@@ -1,6 +1,8 @@
 ﻿### README - Calcium Imaging Raw Data Files
 This README file will detail everything you need to know to understand & use the raw Calcium Imaging data files in this repository (github.com/honglabcsun/Calcium-Imaging). 
 
+The data within this zip file was used in [this publication](https://doi.org/10.7554/eLife.103796.2) (Mackie et al. 2025)
+
 *Note: I know the way the data is stored might be a bit messy or confusing, and probably doesn't quite adhere nicely to proper data science / data storage practices. All I have to say about it is (1) my bad, (2) I didn't know what I know now, and (3) I'll do my best here to assist you in navigating through the system I created at the time. Sorry that it isn't future-proof. Thanks for understanding.*
 
 ***
